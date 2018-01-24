@@ -1,4 +1,4 @@
-/* global shoppingList, store, Item */
+/* global shoppingList, store, Item, api */
 'use strict';
 
 $(document).ready(function() {
@@ -9,5 +9,3 @@ $(document).ready(function() {
     shoppingList.render();
   });
 });
-
-
