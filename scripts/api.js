@@ -17,9 +17,31 @@ const api = (function() {
     });
   };
   
+  const updateItem = function(id, changedValue, callback) {
+    $.ajax({
+      url: `${BASE_URL}/items/${id}`,
+      method: 'PATCH',
+      contentType: 'application/json',
+      data: JSON.stringify(changedValue),
+      success: callback
+    });
+  };
+  
+  
+  
+  const deleteItem = function(id, callback) {
+    $.ajax({
+      url: `${BASE_URL}/items/${id}`,
+      method: 'DELETE',
+      contentType: 'application/json',
+      success: callback
+    });
+  };
   
   return {
     getItems,
-    createItem
+    createItem,
+    updateItem,
+    deleteItem
   };
 })();
