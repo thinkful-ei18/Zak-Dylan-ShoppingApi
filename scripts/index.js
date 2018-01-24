@@ -1,8 +1,17 @@
-/* global shoppingList, store */
+'use strict';
+/* global shoppingList, store, Item, api, callback */
+
 
 $(document).ready(function() {
   shoppingList.bindEventListeners();
-  shoppingList.render();
+  api.getItems((items) => {
+    items.forEach((item) => {
+      store.items.push(item);
+    });
+    shoppingList.render();
+  });
 });
 
-store.items.push(Item.create('apples'));
+
+
+ 
