@@ -1,4 +1,4 @@
-/* global shoppingList, store */
+/* global shoppingList, store, Item */
 'use strict';
 
 $(document).ready(function() {
@@ -8,9 +8,10 @@ $(document).ready(function() {
 
 store.items.push(Item.create('apples'));
 
-
-api.getItems((data) => {
-  console.log(data);
+api.createItem('pears', function(newItem) {
+  api.getItems((items) => {
+    console.log(items);
+  })
 });
 
-console.log(api.BASE_URL);
+
