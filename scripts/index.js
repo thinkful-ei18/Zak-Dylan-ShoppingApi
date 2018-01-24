@@ -12,6 +12,8 @@ $(document).ready(function() {
   });
 });
 
-
+// api.createItem('apples', (response) => {
+//   console.log(response);
+// });
 
  
